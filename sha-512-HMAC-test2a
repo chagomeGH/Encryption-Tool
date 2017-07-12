@@ -1,0 +1,47 @@
+UWB Division of Computing and Software Systems
+CSS 337 Secure Systems—Winter 2016
+Mariana Chagoyan 
+Encryption Tool--Encryption Key(Ke) && HMAC key(Kh)
+    
+Ex2.	Create an Ke (encryption key) and Kh (HMAC key) from Km (master key) using an HMAC function
+Use two different strings or other different input as the salt argument. 
+Use a sha-512 HMAC, and use the first 256 bits as your keys.
+
+Part A:
+2.1	Implementation using different inputs as salt arguments
+This implementation uses 2 files (included in folder):
+a)	sha-512-HMAC-test2a.py
+b)	pbkdf2-test1.py
+2.2	Screen shot of my program running
+2.3	Outputs
+
+2.1 Implementation is provided on test file: sha-512-HMAC-test2.py
+This implementation in written Python and modified from original version 
+to ensure that it was fitting all the required criteria from above. 
+
+Implementation Process Function and Variables
+Buffer [64]
+HMAC (key1, km, Buffer)
+Kh 1= HMA (key1, km)
+Kh 2= HMA (key2, km)
+
+2.2	Screen shots using other different inputs as salt arguments
+Run #1a: commands >> python pbkdf2-test1.py
+I first obtained a Km (master key) from PBKDF2 key derivation function used on part 1 to create Ke and Kh
+
+Run #2a: commands >> python sha-512-HMAC-test2.py
+Then I used the Km from above ad put it into program file sha-512-HMAC-test2.py to finally create Ke and Kh using different inputs as the salt argument. Here we are using sha-512 HMAC and we are using the first 256 bits.
+
+2.3	Outputs using a sha-512 HMAC, and use the first 256 bits
+= firs 32 bytes
+Km: 		c071b5ac6da5bd3a5a32c5a350cd42e9	
+
+K1 = Kh: 	6fa36acc2abe8805bb9a0e98d525ca4d 
+b1ee2fe72a968bb3b72bf263dd5ce30c
+e0ae4f543b1bce1e36eb3b3a9096f96e
+d025e77fd0915a63b8c0bc0d981563f1
+
+K2 = Ke:	}%0xu0( c*!4s{a~!3r"a.zi/vc~ 0'3z&4y%	
+4|q0rui)!b)tc)%c}p5/v2.pa(&a*&e-vex!
+`) 4z&b}&3x!b*zaru7ru4/sc~&f|%5{z`~
+"gx!i(s3(s5r{`~ub-r
