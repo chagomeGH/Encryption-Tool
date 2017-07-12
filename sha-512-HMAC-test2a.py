@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # encoding: utf-8
 """
-    pbkdf2
+    sha-512
     ~~~~~~
-    PBKDF2 implementation for Python.
+    SHA-512 implementation for Python.
     UWB Division of Computing and Software Systems  
     CSS 337 Secure Systems -- Winter 2016
     Mariana Chagoyan 
@@ -14,8 +14,11 @@
     using a Hash Message Authentication Code(HMAC) function
     It uses the following:
     Two different strings or other different input as the salt argument. 
-    Use a sha-512 HMAC, and use the first 256 bits as your keys.
-    Part A:2.1	Implementation using different inputs as salt arguments
+    Use a sha-512 HMAC, and use the first 256 bits as your keys.
+
+    Part A:
+2.1	Implementation using different inputs as salt arguments
+
     This implementation uses 2 files (included in folder):
     a)	sha-512-HMAC-test2a.py
     b)	pbkdf2-test1.py
