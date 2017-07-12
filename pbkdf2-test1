@@ -1,0 +1,50 @@
+UWB Division of Computing and Software Systems
+CSS 337 Secure Systems—Winter 2016
+Mariana Chagoyan 
+Encryption Tool -- Masterkey(Km) from --> PBKDF2
+Ex1. Derive a Km (master key) of 256-bits/32 bytes size from a PBKDF2 key derivation function 
+
+a) Required inputs to the KDF: 
+•	sha-512 hashing function of 256 bits/32 bytes size
+•	32 bytes of salt (generated from a cryptographically random source)
+•	Appropriate iteration count. (100,000 is suggested) 
+
+b) Screen shot of my program running
+
+c) Tests How many passwords can be done in under a second
+
+d) Outputs
+
+This implementation is provided in test file: pbkdf2-test1.py 
+
+Implementation Process Function and Variables
+DK (generated derived key)
+Km(Master key)
+DK = Km
+•	Km = PBKDF2 (Password, Salt, iterations, key Len, hashfunc)
+•	Password = master password from which a derived key is generated 
+(Function of two parameters with output length hLen (e.g. a keyed HMAC)
+•	Salt = sequence of bits, known as a cryptographic salt.
+•	Iterations = number of iterations desired
+•	Key Len = desired length of the derived key
+
+b) Screen shot of my program running 
+Run #1a: commands >>python pbkdf2-test1.py
+
+c) Tests how many passwords can be done in under a second. 
+None of the test could run under a second. 
+I run test 5 times in a row and it took an average of 3.75 seconds. 
+However this program for this part, it seems to break when doing 100,000 iteration counts 
+and it gives this error: “segmentation code’. 
+I run several tests and it seems to be working under from 1000 to 70000.
+
+d) Outputs
+Master key Derivation from a PBKDF2 key derivation function:
+
+Km = 		9e9ad78a042532ba58934be3be316ef
+f703473e1f760aa9d4925bb557ea45263
+
+Password= 	MaStErPaSsWoRd
+ Salt = 		e64702b9a3a44732b48e0aa7768ee9e0 
+ Iterations = 	70000
+ Key-length = 	32 
