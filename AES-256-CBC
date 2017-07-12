@@ -1,0 +1,44 @@
+UWB Division of Computing and Software Systems
+CSS 337 Secure Systems—Winter 2016
+Mariana Chagoyan
+ 
+HW#5: Encryption Tool -- Initialization Vector (IV) from --> AES-256 
+Ex.3  && Ex.4
+
+3.  Generate a random initialization vector (IV) from a cryptographically random source 
+with size  equal to the block size of AES-256 encryption.
+
+4. Encrypt your input message using 
+a) AES 256, 
+b) IV 
+c) Ke 
+d) Chaining mode CBC 
+e) Default-padding mode
+
+This implementation is found in file name: AES-256-CBC.py.
+
+Screen shot of my program running it can be run in two different ways 
+
+a)	if Ke (encryption key is not provided, program can generated )
+
+Test #1a: commands >> python AES-256-CBC .py
+
+Displaying Outputs
+
+Ke: 		uDRRRmAUtbsUK4n4I5UjHQ==	= 24 bytes
+
+IV: 		?)?t?c8T? 6?=D? 		
+
+
+b)	if ke is provided, then program can generate it
+
+Test #1b: commands >> python AES-256-CBC.py -k uDRRRmAUtbsUK4n4I5UjHQ==
+
+I first obtained a Km (master key) from PBKDF2 key derivation function used on part 1 to create Ke and Kh
+
+ 
+Displaying Outputs
+
+Ke: 		uDRRRmAUtbsUK4n4I5UjHQ==	= 24 bytes
+
+IV :		m|????Ȑ?????
