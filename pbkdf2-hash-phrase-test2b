@@ -1,0 +1,51 @@
+Part B:
+2.4	Implementation using 2 different strings
+
+This implementation uses 4 files (included in folder):
+a) sha-512-HMAC-test2a.py
+b) pbkdf2-hash-phrase-test1.py
+c) pbkdf2.py
+d) words.txt
+
+2.5	Screen shot of my program running 
+
+2.6	Outputs
+
+Part B:
+2.4	Implementation using shots using 2 different strings
+sha-512-HMAC-test2a.py
+2.5	Screen shots using 2 different strings
+Run #2a: commands >> python pbkdf2-test1.py
+
+I first obtained a Km (master key) from PBKDF2 key derivation function used on part 1 to create Ke and Kh
+
+Outputs
+Km              = 	6f5df6cd333c9dc3f2a2823282ef131e
+e2867284828ef0d8bcaf099e438b8b36
+Salt              = 	b2ead19b6c4642ab8a508817fe7129c6 
+Password   = 	MaStErPaSsWoRd
+
+Run #2b: commands >> python pbkdf2-hash-phrase-test1.py "Please, give me my message"
+
+I put the above data outputs from above and put it into program file sha-512-HMAC-test2.py to finally create Ke and Kh using 2 different string. Here we are using sha-512 HMAC and we are using the first 256 bits.
+- pseudorandom salt value from run#1[ b2ead19b6c4642ab8a508817fe7129c6 ]
+- Km [6f5df6cd333c9dc3f2a2823282ef131ee2867284828ef0d8bcaf099e438b8b3]
+
+Run #3: commands >> python sha-512-HMAC-test2a.py
+
+Now I took Km and using two different strings from above and place into this function
+
+2.6	Outputs using a sha-512 HMAC, and use the first 256 bits
+= firs 32 bytes
+
+Km: 		c071b5ac6da5bd3a5a32c5a350cd42e9	
+
+K1 = Kh: 	f5b02a6b7ebabcf44af5683fec77b2848 	
+1c8e2aef3a5e9126774d9e25e7627f74
+8fbc4f79e4cc1d4e360a9e9c4d4c0286
+ae933d71afb8a7a553e773dc712df82
+
+K2 = Ke:	-v3{q0}!f.!0) 7w0-vgsp7. f|!cswiz i.q0.%	
+b*v4rrc}tf'h.qd.tgyt7|wi-!2%fr&e( `/w4
+xua*z4r e/w2{qi}"4rpb/t`*%3s"f*vdx&f
+|p5(t`y'7sq
