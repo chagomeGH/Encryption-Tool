@@ -4,21 +4,24 @@
     ~~~~~~
     PBKDF2 implementation for Python.
     UWB Division of Computing and Software Systems  
-    CSS 337 Secure Systems
+    CSS 337 Secure Systems -- Winter 2016
     Mariana Chagoyan 
-    Encryption Tool
+    Encryption Tool -- Masterkey(Km) from --> PBKDF2 
     
     Description:
-    Derive a Km (master key) of 256-bits/32 bytes size from a PBKDF2 key derivation function 
+    Derive a Master key(Km) of 256-bits/32 bytes size from a PBKDF2 key derivation function 
     Required inputs for the KDF: 
     1. sha-512 hashing function of 256 bits/32 bytes size
     2. 32 bytes of salt (generated from a cryptographically random source)
-    3. Appropriate iteration count  
-    c) Tests how many passwrods can be done under a second include your password
+    3. Appropriate iteration count  
+
+    c) Tests how many passwrods can be done under a second include your password
+
 
     Km = PBKDF2 (Password, Salt, iterations, key Len, hashfunc)
     Password = master password from which a derived key is generated
-    (Function of two parameters with output length hLen (e.g. a keyed HMAC)
+    
+(Function of two parameters with output length hLen (e.g. a keyed HMAC)
     Salt = sequence of bits, known as a cryptographic salt
     Iterations = number of iterations desired
     Key Len = desired length of the derived key
